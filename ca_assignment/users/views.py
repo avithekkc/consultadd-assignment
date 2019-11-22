@@ -14,8 +14,8 @@ def registration(request):
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
 
-            messages.success(request, f'Account Created for {username}!')
-            return redirect('blog-home')
+            messages.success(request, f'Your account has ben created! Login to access the blog!')
+            return redirect('login')
     else:
             form = UserRegistrationForm()
     return render(request, 'users/registration.html', {'form': form})
